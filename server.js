@@ -24,6 +24,7 @@ mongoose.connect(process.env.MONGO_URI)
 const auth = require('./routes/auth')
 const product = require('./routes/product')
 
-app.use('/auth',auth)
+// app.use('/auth',auth)
+app.use('/auth', require('./routes/auth'))
 app.use('/product', product)
 console.log("ENV:", process.env.MONGO_URI)
